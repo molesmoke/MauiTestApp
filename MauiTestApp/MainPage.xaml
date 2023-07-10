@@ -35,6 +35,8 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
+            <Slider Value="0.5"/>
+
         </VerticalStackLayout>
     </ScrollView>
 
