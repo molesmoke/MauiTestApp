@@ -1,24 +1,20 @@
-﻿namespace MauiTestApp
+﻿using System.Diagnostics;
+
+namespace MauiTestApp
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        public List<string> Strings { get; } = ["1", "2", "3"];
 
         public MainPage()
         {
             InitializeComponent();
-        }
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
+            collectionView.ItemsSource = Strings;
+            collectionView.SelectedItem = Strings[1];
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            listView.ItemsSource = Strings;
+            collectionView.SelectedItem = Strings[1];
         }
     }
 
